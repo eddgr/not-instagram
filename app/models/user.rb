@@ -1,7 +1,26 @@
 class User < ApplicationRecord
+  attr_accessor :password
+  before_save :encrypt_password
+
   has_many :posts
-  # has_many :relationships
-  # has_many :followers, foreign_key: :follower_id, through: :relationships
-  # has_many :following, foreign_key: :following_id, through: :relationships
+  
   validates :name, presence: true
+  validates :email, presence: true, uniqueness: true
+  validates :password, on: :create, confirmation: true
+
+  def encrypt_password
+    if password.present?
+      self.password_salt = BCrypt::Engine.generate_salt
+      self.password_hash = BCrypt::Engine.hash_secret(password, password_salt)
+    end
+  end
+
+  def self.authenticate(email, password)
+    user = find_by_email(email)
+    if user && user.password_hash == BCrypt::Engine.hash_secret(password, user.password_salt)
+      user
+    else
+      nil
+    end
+  end
 end
