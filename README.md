@@ -25,7 +25,10 @@
 
 ## Users
   - has_many Followings, Followers, Posts
-  - validates name is unique, is not blank
+  <!-- - validates name is not blank -->
+  - validates email is unique and is not blank
+  - attr_accessible :name
+  - use find_by_email
   <!-- - Show all users -->
   <!-- - create a new user -->
   <!-- - link to users posts -->
