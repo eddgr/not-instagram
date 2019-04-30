@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NotInstagramApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav class="navbar bg-light sticky-top justify-content-center">
+      <a class="nav-link" href="<%= posts_path %>">Post Index</a>
+      <a class="nav-link" href="<%= new_post_path %>">New Post</a>
+      <a class="nav-link" href="<%= users_path %>">User Index</a>
+      <a class="nav-link" href="<%= new_user_path %>">New User</a>
+    </nav>
+
+    <div class="container">
+      <% if flash[:success] %>
+        <div class="alert alert-success"><%= flash[:success] %></div>
+      <% end %>
+      <% if flash[:danger] %>
+        <div class="alert alert-danger"><%= flash[:danger] %></div>
+      <% end %>
+
+      <%= yield %>
+    </div>
+  </body>
+</html>
