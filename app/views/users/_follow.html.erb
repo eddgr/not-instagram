@@ -1,23 +1,25 @@
 <% if session[:user_id].nil? || !session[:user_id].nil? && current_user.id != @user.id %>
+<!-- if user is signed in and is not the current user -->
 
   <% if !session[:user_id].nil? %>
+  <!-- if user is signed in -->
     <% if !current_user.following?(@user) %>
-
+    <!-- if current user is not followering user, show Follow button -->
       <%= form_for(current_user.active_relationships.build) do |f| %>
         <%= hidden_field_tag :followed_id, @user.id %>
         <%= f.submit "Follow", class: "btn btn-primary" %>
       <% end %>
     <% else %>
-
+    <!-- else show Unfollow button -->
       <%= form_for(current_user.active_relationships.find_by(followed_id: @user.id), html: { method: :delete }) do |f| %>
         <%= f.submit "Unfollow", class: "btn btn-danger" %>
       <% end %>
+    <% end %> <!-- end if -->
 
-    <% end %>
+  <% else %>
+  <!-- show send user to sign up page if they're not signed in -->
+    <%= link_to "Follow", new_user_path, class: "btn btn-primary" %>
 
-    <% else %>
-
-    <%= link_to "Follow", user_path(@user), class: "btn btn-primary" %>
   <% end %>
 
 <% end %>

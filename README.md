@@ -1,21 +1,21 @@
 # MVP TODO
 
 ## PRIORITY
-  - Create new post from specific user
-  - Login to specific user
+  <!-- - Create new post from specific user -->
+  <!-- - Login to specific user -->
 
 ## LAYOUT
   - Header nav menu - Sign up, Login, Profile, Logout
     <!-- - Install bootstrap and dependencies -->
-    - Sign up
-      - form to create new user with validation
-      - redirect_to show page
-      - set state as logged in
-      - Show logged in as user
-    - Login
-      - form that finds if user exist and goes to show page
-      - set state as logged in
-      - Show logged in as user
+    <!-- - Sign up -->
+      <!-- - form to create new user with validation -->
+      <!-- - redirect_to show page -->
+      <!-- - set state as logged in -->
+      <!-- - Show logged in as user -->
+    <!-- - Login -->
+      <!-- - form that finds if user exist and goes to show page -->
+      <!-- - set state as logged in -->
+      <!-- - Show logged in as user -->
     - Profile
     - Logout
   - Show all following user posts
@@ -24,22 +24,20 @@
   - Show in user profile
 
 ## Users
-  - has_many Followings, Followers, Posts
+  <!-- - has_many Posts -->
   <!-- - validates name is not blank -->
-  - validates email is unique and is not blank
-  - attr_accessible :name
-  - use find_by_email
+  <!-- - validates email is unique and is not blank -->
   <!-- - Show all users -->
   <!-- - create a new user -->
   <!-- - link to users posts -->
   <!-- - edit username -->
   <!-- - Successful new user sign up -->
-  - Need following/follower relationship
+  <!-- - Need following/follower relationship -->
+  - use find_by_email
 
 ## Posts
-  - belongs_to User, Follower, Following
+  - belongs_to User
   - validates title is not blank
-  - validates user_id is not blank
   <!-- - Show all posts -->
   <!-- - user << add new post -->
   <!-- - link to posts' user -->
