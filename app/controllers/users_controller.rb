@@ -18,6 +18,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:success] = "You have successfully signed up!"
+      session[:user_id] = @user.id
+      # log in after signing up
       redirect_to @user
     else
       flash[:danger] = "Your account was not created, try again"
