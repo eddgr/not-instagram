@@ -5,7 +5,7 @@
   <!-- - Login to specific user -->
 
 ## LAYOUT
-  - Header nav menu - Sign up, Login, Profile, Logout
+  <!-- - Header nav menu - Sign up, Login, Profile, Logout -->
     <!-- - Install bootstrap and dependencies -->
     <!-- - Sign up -->
       <!-- - form to create new user with validation -->
@@ -16,8 +16,8 @@
       <!-- - form that finds if user exist and goes to show page -->
       <!-- - set state as logged in -->
       <!-- - Show logged in as user -->
-    - Profile
-    - Logout
+    <!-- - Profile -->
+    <!-- - Logout -->
   - Show all following user posts
   - Show all posts
   - Add new content page
@@ -36,7 +36,7 @@
   - use find_by_email
 
 ## Posts
-  - belongs_to User
+  <!-- - belongs_to User -->
   - validates title is not blank
   <!-- - Show all posts -->
   <!-- - user << add new post -->
@@ -56,7 +56,7 @@
     - followed by another user
 
 ### Stretch Goals
-- Post comments
+<!-- - Post comments -->
 - Post likes
 
 ---

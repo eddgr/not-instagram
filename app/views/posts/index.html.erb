@@ -2,6 +2,6 @@
 
 <div class="row">
   <% @photos.each do |post| %>
-    <div class="col-sm"><%= link_to image_tag(post.photo, class: "rounded img-fluid", size: "400x400"), post %></div>
+    <div class="col-4 mb-4"><%= link_to image_tag(post.photo, class: "rounded img-fluid", size: "400x400"), post %></div>
   <% end %>
 </div>
