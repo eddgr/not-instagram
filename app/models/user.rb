@@ -6,6 +6,8 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
   validates :password, on: :create, confirmation: true
 
+  has_many :comments, dependent: :destroy
+  has_many :posts, through: :comments
   has_many :posts, dependent: :destroy
   # destroys posts associated with user
 

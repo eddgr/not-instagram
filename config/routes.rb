@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   get 'log_out', to: "sessions#destroy", as: "log_out"
   get 'sign_up', to: "users#new", as: "sign_up"
   resources :sessions
-  resources :posts
+
+  resources :posts do
+    resources :comments
+    # comments belongs_to posts
+  end
 
   resources :relationships, only: [:create, :destroy]
   # used for Follow and Unfollow

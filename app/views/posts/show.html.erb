@@ -5,6 +5,11 @@
 <p><%= @post.description %></p>
 <p>Posted by: <%= link_to @post.user.name, @post.user %></p>
 
+<hr>
+<%= @post.comments.count %> Comments<br>
+<%= render @post.comments.order('created_at DESC') %>
+<%= render 'comments/form' %>
+
 <% if !session[:user_id].nil? %>
   <% if @post.user.id == current_user.id %>
     <%= link_to "Edit Post", edit_post_path, class: "btn btn-primary" %>
