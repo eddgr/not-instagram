@@ -1,18 +1,24 @@
 <% if @post.photo.attached? %>
-  <%= image_tag @post.photo %>
+<%= image_tag @post.photo %>
 <% end %>
-<h1><%= @post.title %></h1>
-<p><%= @post.description %></p>
-<p>Posted by: <%= link_to @post.user.name, @post.user %></p>
+<p>
+  <strong><%= link_to @post.user.email, @post.user %></strong>
+  <%= @post.description %>
+</p>
 
 <hr>
-<%= @post.comments.count %> Comments<br>
+<%= @post.comments.count %>
+<% if @post.comments.count == 1 %>
+  Comment
+<% else %>
+  Comments
+<% end %>
+
+<br>
 <%= render @post.comments.order('created_at DESC') %>
-<%= render 'comments/form' %>
 
 <% if !session[:user_id].nil? %>
-  <% if @post.user.id == current_user.id %>
-    <%= link_to "Edit Post", edit_post_path, class: "btn btn-primary" %>
-    <%= link_to "Delete Post", @post, method: :delete, class: "btn btn-danger", data: { confirm: "Are you sure?" } %>
-  <% end %>
+  <%= render 'comments/form' %>
 <% end %>
+
+<%= render 'edit_post' %>

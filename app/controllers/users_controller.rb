@@ -43,6 +43,13 @@ class UsersController < ApplicationController
     end
   end
 
+  # DESTROY
+  def destroy
+    set_user.destroy
+    session[:user_id] = nil
+    redirect_to root_path
+  end
+
   # HIDDEN METHODS
   private
 

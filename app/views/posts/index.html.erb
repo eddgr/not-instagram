@@ -1,7 +1,5 @@
 <h1>All Posts</h1>
 
-<ul>
 <% @posts.order('posts.created_at DESC').each do |post| %>
-  <li><%= link_to post.title, post %></li>
+  <%= link_to post.title, post %>
 <% end %>
-</ul>
