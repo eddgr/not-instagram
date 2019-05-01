@@ -1,5 +1,10 @@
 <h1><%= @post.title %></h1>
 <p><%= @post.description %></p>
 <p>Posted by: <%= link_to @post.user.name, @post.user %></p>
-<%= link_to "Edit Post", edit_post_path, class: "btn btn-primary" %>
-<%= link_to "Delete Post", @post, method: :delete, class: "btn btn-danger", data: { confirm: "Are you sure?" } %>
+
+<% if !session[:user_id].nil? %>
+  <% if @post.user.id == current_user.id %>
+    <%= link_to "Edit Post", edit_post_path, class: "btn btn-primary" %>
+    <%= link_to "Delete Post", @post, method: :delete, class: "btn btn-danger", data: { confirm: "Are you sure?" } %>
+  <% end %>
+<% end %>

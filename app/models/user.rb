@@ -3,7 +3,7 @@ class User < ApplicationRecord
   before_save :encrypt_password
 
   has_many :posts
-  
+
   validates :name, presence: true
   validates :email, presence: true, uniqueness: true
   validates :password, on: :create, confirmation: true
