@@ -1,3 +1,6 @@
+<% if @post.photo.attached? %>
+  <%= image_tag @post.photo %>
+<% end %>
 <h1><%= @post.title %></h1>
 <p><%= @post.description %></p>
 <p>Posted by: <%= link_to @post.user.name, @post.user %></p>

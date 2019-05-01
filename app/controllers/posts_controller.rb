@@ -40,7 +40,7 @@ class PostsController < ApplicationController
   def destroy
     flash[:success] = "Post successfully deleted!"
     set_post.destroy
-    redirect_to posts_path
+    redirect_to user_path(current_user)
   end
 
   # HIDDEN METHODS
@@ -51,7 +51,7 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :description, :user_id)
+    params.require(:post).permit(:title, :description, :user_id, :photo)
   end
 
 end

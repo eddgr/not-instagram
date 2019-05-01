@@ -1,4 +1,10 @@
 <%= form_for @post do |f| %>
+  <% if @post.photo.attached? %>
+    <%= image_tag @post.photo %><br>
+  <% else %>
+    <%= f.label :photo %><br>
+    <%= f.file_field :photo %><br>
+  <% end %>
   <%= f.label :title %>
   <%= f.text_field :title, class: "form-control" %><br>
   <%= f.label :description %>
