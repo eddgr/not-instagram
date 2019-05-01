@@ -3,9 +3,9 @@
 <p><%= @user.email %></p>
 
 Following
-<%= @user.following.count %>
+<%= link_to @user.following.count, following_path %>
 Followers
-<%= @user.followers.count %>
+<%= link_to @user.followers.count, followers_path %>
 
 <%= render 'follow' %>
 

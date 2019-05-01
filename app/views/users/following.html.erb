@@ -1,0 +1,7 @@
+<h1>Following</h1>
+
+<ul>
+  <% @following.each do |following| %>
+    <li><%= link_to following.email, following %></li>
+  <% end %>
+</ul>

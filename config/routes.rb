@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   resources :relationships, only: [:create, :destroy]
   # used for Follow and Unfollow
 
+  get 'users/:id/following', to: "users#following", as: "following"
+  get 'users/:id/followers', to: "users#followers", as: "followers"
   resources :users do
     member do
       get :following, :followers

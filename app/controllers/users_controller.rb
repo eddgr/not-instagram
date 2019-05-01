@@ -9,6 +9,14 @@ class UsersController < ApplicationController
     set_user
   end
 
+  def following
+    @following = set_user.following
+  end
+
+  def followers
+    @followers = set_user.followers
+  end
+
   # CREATE
   def new
     @user = User.new
