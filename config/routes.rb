@@ -10,8 +10,12 @@ Rails.application.routes.draw do
   # get 'users/show'
   get 'sign_up', to: "users#new", as: "sign_up"
   resources :sessions
-  resources :relationships
+  resources :relationships, only: [:create, :destroy]
   resources :posts
-  resources :users, except: :destroy
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
