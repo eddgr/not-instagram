@@ -2,7 +2,12 @@ class PostsController < ApplicationController
 
   # READ
   def index
-    @posts = Post.all
+    @posts = Post.all.order('posts.created_at DESC')
+
+    # show only posts that contain photos in the index page
+    @photos = @posts.select do |post|
+      post.photo.attached?
+    end
   end
 
   def show
