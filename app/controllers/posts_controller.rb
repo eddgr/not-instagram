@@ -3,16 +3,23 @@ class PostsController < ApplicationController
   # READ
   def index
     @posts = Post.all.order('posts.created_at DESC')
+    # order by created_at in descending order so newest shows first
 
     # show only posts that contain photos in the index page
-    # order by created_at in descending order so newest shows first
-    @photos = @posts.order("created_at DESC").select do |post|
+    @photos = @posts.select do |post|
       post.photo.attached?
     end
   end
 
   def show
     set_post
+  end
+
+  def discover
+    # posts of people that I'm currently not following
+    # go through each post in Post.all
+    # if post does not equal post from following or self, show
+    @discover = Post.all.sample(9)
   end
 
   # CREATE

@@ -1,5 +1,5 @@
 <!-- Following Posts -->
-<h2 class="text-center">Following Posts</h2>
+<h1 class="text-center">Following Posts</h1>
 <div class="row">
   <% current_user.following.each do |following| %>
     <% following.posts.order("created_at DESC").each do |post| %>
