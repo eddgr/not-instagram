@@ -5,6 +5,12 @@
 <!-- - fix upload issue where file is not a photo -->
 - add fifth model
 - check out css libraries
+ - white nav bar
+ - light grey background
+ - action links are light blue
+ - everything else is a darker grey
+ - links are generally bold
+ - following is a white button with black borders, not the current red
 - explore page to find new content
 - add user avatar
 - start styling

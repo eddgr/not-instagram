@@ -1,4 +1,4 @@
-<h1><%= @post.title %></h1>
+<h1 class="mt-4 mb-4"><%= @post.title %></h1>
 <% if @post.photo.attached? %>
 <%= image_tag @post.photo, class: "img-fluid" %>
 <% end %>
