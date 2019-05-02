@@ -3,12 +3,16 @@
 <!-- - correct error messsages -->
 <!-- - feed of following -->
 <!-- - fix upload issue where file is not a photo -->
-- following should include self posts
+- add fifth model
+- check out css libraries
 - explore page to find new content
 - add user avatar
 - start styling
-- stretch goal: likes
-- stretch goal: messaging?
+
+# stretch goals
+- likes
+- following should include self posts
+- messaging?
 
 
 ## PRIORITY

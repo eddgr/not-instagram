@@ -1,6 +1,6 @@
 <h1><%= @post.title %></h1>
 <% if @post.photo.attached? %>
-<%= image_tag @post.photo %>
+<%= image_tag @post.photo, class: "img-fluid" %>
 <% end %>
 <p>
   <strong><%= link_to @post.user.email, @post.user %></strong>
