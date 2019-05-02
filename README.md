@@ -1,9 +1,10 @@
 # MVP TODO
 
 <!-- - correct error messsages -->
+<!-- - feed of following -->
 - fix upload issue where file is not a photo
-- start styling
 - add user avatar
+- start styling
 - stretch goal: likes
 - stretch goal: messaging?
 

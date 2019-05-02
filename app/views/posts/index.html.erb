@@ -1,7 +1,5 @@
-<h1>All Posts with Photos</h1>
-
-<div class="row">
-  <% @photos.each do |post| %>
-    <div class="col-4 mb-4"><%= link_to image_tag(post.photo, class: "rounded img-fluid", size: "400x400"), post %></div>
-  <% end %>
-</div>
+<% if session[:user_id].nil? %>
+  <%= render 'explore' %>
+<% else %>
+  <%= render 'following' %>
+<% end %>
