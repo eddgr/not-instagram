@@ -2,7 +2,7 @@
 <h2 class="text-center">Following Posts</h2>
 <div class="row">
   <% current_user.following.each do |following| %>
-    <% following.posts.each do |post| %>
+    <% following.posts.order("created_at DESC").each do |post| %>
       <div class="col-4 mb-4"><%= link_to image_tag(post.photo, class: "rounded img-fluid", size: "400x400"), post %></div>
     <% end %>
   <% end %>

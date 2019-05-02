@@ -5,7 +5,8 @@ class PostsController < ApplicationController
     @posts = Post.all.order('posts.created_at DESC')
 
     # show only posts that contain photos in the index page
-    @photos = @posts.select do |post|
+    # order by created_at in descending order so newest shows first
+    @photos = @posts.order("created_at DESC").select do |post|
       post.photo.attached?
     end
   end

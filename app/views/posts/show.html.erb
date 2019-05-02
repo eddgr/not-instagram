@@ -4,7 +4,8 @@
 <% end %>
 <p>
   <strong><%= link_to @post.user.email, @post.user %></strong>
-  <%= @post.description %>
+  <%= @post.description %><br>
+  <small><%= time_ago_in_words(@post.created_at) %></small>
 </p>
 
 <hr>
