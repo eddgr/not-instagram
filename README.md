@@ -1,5 +1,13 @@
 # MVP TODO
 
+<!-- - correct error messsages -->
+- fix upload issue where file is not a photo
+- start styling
+- add user avatar
+- stretch goal: likes
+- stretch goal: messaging?
+
+
 ## PRIORITY
   <!-- - Create new post from specific user -->
   <!-- - Login to specific user -->

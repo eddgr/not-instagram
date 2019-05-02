@@ -4,7 +4,11 @@ class User < ApplicationRecord
 
   validates :name, presence: true
   validates :email, presence: true, uniqueness: true
+
+  # password requires confirmation
   validates :password, on: :create, confirmation: true
+  # password requires confirmation on update
+  validates :password, confirmation: true
 
   has_many :comments, dependent: :destroy
   has_many :posts, through: :comments

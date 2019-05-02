@@ -30,8 +30,7 @@ class UsersController < ApplicationController
       # log in after signing up
       redirect_to @user
     else
-      flash[:danger] = "Your account was not created, try again"
-      redirect_to new_user_path
+      render :new
     end
   end
 
@@ -46,8 +45,7 @@ class UsersController < ApplicationController
       flash[:success] = "Profile successfully updated!"
       redirect_to @user
     else
-      flash[:danger] = "Your profile was not updated, try again!"
-      redirect_to edit_user_path
+      render :edit
     end
   end
 

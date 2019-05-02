@@ -25,7 +25,6 @@ class PostsController < ApplicationController
       flash[:success] = "Successfully posted!"
       redirect_to @post
     else
-      flash[:danger] = "Post did not save, try again!"
       render :new
     end
   end
@@ -36,9 +35,12 @@ class PostsController < ApplicationController
   end
 
   def update
-    flash[:success] = "Post successfully updated!"
-    set_post.update(post_params)
-    redirect_to set_post
+    if set_post.update(post_params)
+      flash[:success] = "Post successfully updated!"
+      redirect_to set_post
+    else
+      render :edit
+    end
   end
 
   # DESTROY

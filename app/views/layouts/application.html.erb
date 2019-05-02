@@ -36,20 +36,14 @@
     </header>
 
     <div class="container">
+      
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, id: "flash_#{name}", class: "alert alert-info" %>
       <% end %>
 
-      <!--
-      <% if flash[:success] %>
-        <div class="alert alert-success"><%= flash[:success] %></div>
-      <% end %>
-      <% if flash[:danger] %>
-        <div class="alert alert-danger"><%= flash[:success] %></div>
-      <% end %>
-      -->
-
       <%= yield %>
+
     </div>
+
   </body>
 </html>

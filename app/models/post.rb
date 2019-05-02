@@ -5,6 +5,6 @@ class Post < ApplicationRecord
   validates :title, presence: true
   validates :user_id, presence: true
   has_one_attached :photo
-  validates :photo, attached: true, content_type: ['image/png', 'image/jpg', 'image/jpeg'], dimension: { width: { max: 1200 }, height: { max: 1200 }, message: 'is not given between dimension' }
+  validates :photo, attached: true, content_type: ['image/png', 'image/jpg', 'image/jpeg', 'image/gif']
   # uses active_storage_validations gem
 end
