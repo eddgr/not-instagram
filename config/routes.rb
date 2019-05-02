@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'sign_up', to: "users#new", as: "sign_up"
   resources :sessions
 
-  get 'discover', to: "posts#discover", as: "discover"
+  get 'explore', to: "posts#explore", as: "explore"
   resources :posts do
     resources :comments
     # comments belongs_to posts

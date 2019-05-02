@@ -8,18 +8,25 @@ class PostsController < ApplicationController
     # show only posts that contain photos in the index page
     @photos = @posts.select do |post|
       post.photo.attached?
-    end
+    end.sample(9)
   end
 
   def show
     set_post
   end
 
-  def discover
+  def explore
+    # using the same @var as index
+    @posts = Post.all.order('posts.created_at DESC')
+    @photos = @posts.select do |post|
+      post.photo.attached?
+    end.sample(9)
+
+    # original idea
     # posts of people that I'm currently not following
     # go through each post in Post.all
     # if post does not equal post from following or self, show
-    @discover = Post.all.sample(9)
+    # @discover = Post.all.sample(9)
   end
 
   # CREATE
