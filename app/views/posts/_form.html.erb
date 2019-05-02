@@ -10,7 +10,11 @@
     </div>
   <% end %>
 
-  <% if @post.photo.attached? %>
+  <% if @post.photo.attached? && @post.photo.valid? %>
+  <!-- if photo upload isn't valid, allow user to re-upload a new file -->
+    <%= image_tag @post.photo %><br>
+    <%= f.file_field :photo %><br>
+  <% elsif @post.photo.attached? %>
     <%= image_tag @post.photo %><br>
   <% else %>
     <%= f.file_field :photo %><br>

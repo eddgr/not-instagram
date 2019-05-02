@@ -2,7 +2,7 @@
 
 <!-- - correct error messsages -->
 <!-- - feed of following -->
-- fix upload issue where file is not a photo
+<!-- - fix upload issue where file is not a photo -->
 - add user avatar
 - start styling
 - stretch goal: likes
