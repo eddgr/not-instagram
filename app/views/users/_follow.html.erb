@@ -12,7 +12,7 @@
     <% else %>
     <!-- else show Unfollow button -->
       <%= form_for(current_user.active_relationships.find_by(followed_id: @user.id), html: { method: :delete }) do |f| %>
-        <%= f.submit "Unfollow", class: "btn btn-danger" %>
+        <%= f.submit "Unfollow", class: "btn btn-outline-dark" %>
       <% end %>
     <% end %> <!-- end if -->
 

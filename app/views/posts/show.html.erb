@@ -2,7 +2,7 @@
 <% if @post.photo.attached? %>
 <%= image_tag @post.photo, class: "img-fluid" %>
 <% end %>
-<p>
+<p class="mt-2">
   <strong><%= link_to @post.user.email, @post.user %></strong>
   <%= @post.description %><br>
   <small><%= time_ago_in_words(@post.created_at) %></small>
