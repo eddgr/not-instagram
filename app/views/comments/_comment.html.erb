@@ -1,3 +1,5 @@
-<strong><%= link_to comment.user.email, user_path(comment.user) %></strong>
-<%= comment.body %>
-<em><small><%= time_ago_in_words(comment.created_at) %></small></em><br>
+<div class="bg-white pl-4 pr-4">
+  <strong><%= link_to comment.user.email, user_path(comment.user), class: "text-dark" %></strong>
+  <%= comment.body %>
+  <em><small><%= time_ago_in_words(comment.created_at) %></small></em><br>
+</div>

@@ -1,6 +1,7 @@
-<hr class="mb-4">
-<%= form_for([@post, @post.comments.build]) do |f| %>
-  <%= f.hidden_field :user_id, value: current_user.id %>
-  <%= f.text_area :body, placeholder: "Add a comment", class:"form-control" %><br>
-  <%= f.submit class: "btn btn-outline-primary" %>
-<% end %>
+<div class="bg-white pb-4 pl-4 pr-4">
+  <%= form_for([@post, @post.comments.build]) do |f| %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <%= f.text_area :body, placeholder: "Add a comment", class:"form-control" %><br>
+    <%= f.submit class: "btn btn-outline-primary" %>
+  <% end %>
+</div>

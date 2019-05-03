@@ -1,26 +1,30 @@
-<h1 class="mt-4 mb-4"><%= @post.title %></h1>
-<% if @post.photo.attached? %>
-<%= image_tag @post.photo, class: "img-fluid" %>
-<% end %>
-<p class="mt-2">
-  <strong><%= link_to @post.user.email, @post.user %></strong>
-  <%= @post.description %><br>
-  <small><%= time_ago_in_words(@post.created_at) %></small>
-</p>
+<div class="row justify-content-center mt-4">
+  <div class="col-10 pr-0 pl-0 mb-5 shadow">
+    <div class="bg-white p-4">
+      <%= link_to @post.user.email, @post.user, class: "font-weight-bold text-dark" %>
+    </div>
 
-<hr>
-<%= @post.comments.count %>
-<% if @post.comments.count == 1 %>
-  Comment
-<% else %>
-  Comments
-<% end %>
+    <div>
+      <% if @post.photo.attached? %>
+        <%= image_tag @post.photo, class: "img-fluid w-100" %>
+      <% end %>
+    </div>
 
-<br>
-<%= render @post.comments.order('created_at DESC') %>
+    <div class="bg-white pt-4 pt-4 pl-4">
+      <%= link_to @post.user.email, @post.user, class: "font-weight-bold text-dark" %> <%= @post.title %><br>
+      <%= link_to @post.user.email, @post.user, class: "font-weight-bold text-dark" %> <%= @post.description %>
+    </div>
 
-<% if !session[:user_id].nil? %>
-  <%= render 'comments/form' %>
-<% end %>
+    <%= render @post.comments.order('created_at DESC') %>
 
-<%= render 'edit_post' %>
+    <div class="bg-white pb-4 pl-4 pr-4 text-uppercase text-black-50">
+      <small><%= time_ago_in_words(@post.created_at) %></small>
+    </div>
+
+    <% if !session[:user_id].nil? %>
+      <%= render 'comments/form' %>
+    <% end %>
+
+    <%= render 'edit_post' %>
+  </div>
+</div>
