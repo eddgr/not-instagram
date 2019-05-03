@@ -1,10 +1,15 @@
 <% if !session[:user_id].nil? && @post.user.id == current_user.id %>
-  <h1>Edit Post</h1>
-  <%= render 'form' %>
-  <%= button_to "Delete Post", @post, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+  <h1 class="text-center mt-4 mb-4">Edit Post</h1>
+  <div class="row justify-content-center">
+    <%= render 'form' %>
+  </div>
+  <div class="row justify-content-center mb-4">
+    <%= button_to "Delete Post", @post, method: :delete, data: { confirm: "Are you sure?" }, class: "btn-sm btn-outline-danger" %>
+  </div>
 
 <% else %>
-  You do not have access to edit.
-  <%= link_to "Go home", root_path %>
-
+  <p class="mt-4 text-center">
+    You do not have access to edit.
+    <%= link_to "Go home", root_path %>
+  </p>
 <% end %>

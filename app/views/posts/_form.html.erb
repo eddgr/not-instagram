@@ -1,27 +1,27 @@
-<%= form_for @post do |f| %>
-  <% if @post.errors.any? %>
-    <div class="alert alert-danger">
-      <h2>There were some errors:</h2>
-      <ul>
-        <% @post.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <% if @post.photo.attached? && @post.photo.valid? %>
-  <!-- if photo upload isn't valid, allow user to re-upload a new file -->
-    <%= image_tag @post.photo %><br>
-    <%= f.file_field :photo %><br>
-  <% elsif @post.photo.attached? %>
-    <%= image_tag @post.photo %><br>
-  <% else %>
-    <%= f.file_field :photo %><br>
-  <% end %><br>
-  <%= f.label :title %>
-  <%= f.text_field :title, class: "form-control" %><br>
-  <%= f.label :description %>
-  <%= f.text_area :description, class: "form-control" %><br>
-  <%= f.submit class: "btn btn-primary" %>
-<% end %>
+  <div class="col-10">
+    <%= form_for(@post, html: {class: "row justify-content-center"}) do |f| %>
+      <% if @post.errors.any? %>
+        <div class="alert alert-danger">
+          <h2>There were some errors:</h2>
+          <ul>
+            <% @post.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <% if @post.photo.attached? && @post.photo.valid? %>
+      <!-- if photo upload isn't valid, allow user to re-upload a new file -->
+        <%= image_tag @post.photo, class: "img-fluid w-100" %>
+        <%= f.file_field :photo, class: "m-4 bg-dark text-light" %>
+      <% else %>
+        <%= f.file_field :photo, class: "m-4 bg-dark text-light" %>
+      <% end %>
+
+      <%= f.text_field :title, placeholder: "Add title", class: "form-control mb-4" %>
+      <%= f.text_area :description, placeholder: "Add description", class: "form-control" %><br>
+      <%= f.submit class: "btn btn-primary m-4" %>
+    <% end %>
+  </div>
