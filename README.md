@@ -18,6 +18,10 @@
 
 # stretch goals
 - likes
+  - users has many likes through posts
+  - posts has many likes
+  - likes belong to posts
+  - likes belong to users through posts
 - following should include self posts
 - messaging?
 

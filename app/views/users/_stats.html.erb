@@ -1,0 +1,7 @@
+<ul class="list-group list-group-horizontal mx-auto justify-content-center mt-4">
+  <li class="list-group-item border-0 bg-light"><strong><%= @user.posts.count %></strong> posts</li>
+
+  <li class="list-group-item border-0 bg-light"><%= link_to followers_path, class: "text-dark" do %><strong><%= @user.followers.count %></strong> followers<% end %></li>
+
+  <li class="list-group-item border-0 bg-light"><%= link_to following_path, class: "text-dark" do %><strong><%= @user.following.count %></strong> following<% end %></li>
+</ul>
