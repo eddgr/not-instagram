@@ -2,6 +2,7 @@
   <div class="col-10 pr-0 pl-0 mb-5 shadow">
     <div class="bg-white p-4">
       <%= link_to @post.user.email, @post.user, class: "font-weight-bold text-dark" %>
+      <%= render 'edit_post' %>
     </div>
 
     <div>
@@ -24,7 +25,5 @@
     <% if !session[:user_id].nil? %>
       <%= render 'comments/form' %>
     <% end %>
-
-    <%= render 'edit_post' %>
   </div>
 </div>
