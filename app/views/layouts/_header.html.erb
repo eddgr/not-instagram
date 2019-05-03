@@ -3,12 +3,12 @@
 
     <a class="navbar-brand" href="<%= root_path %>">Not Instagram</a>
 
+    <% if current_user %>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <% if current_user %>
       <ul class="navbar-nav mr-auto">
         <li class="nav-item"><a class="nav-link" href="<%= explore_path %>">Explore</a></li>
         <li class="nav-item"><a class="nav-link" href="<%= users_path %>">User Index</a></li>
@@ -21,15 +21,15 @@
         <li class="nav-item"><%= link_to "Profile", user_path(current_user), class: "nav-link" %></li>
         <li class="nav-item"><%= link_to "Log Out", log_out_path, class: "nav-link" %></li>
       </ul>
+    </div>
     <% else %>
       <ul class="navbar-nav mr-auto">
       </ul>
 
-      <ul class="navbar-nav">
-        <li class="nav-item"><%= link_to "Sign up", sign_up_path, class: "nav-link" %></li>
-        <li class="nav-item"><%= link_to "Log In", log_in_path, class: "btn btn-primary" %></li>
+      <ul class="navbar-nav list-group-horizontal">
+        <li class="nav-item"><%= link_to "Sign up", sign_up_path, class: "btn btn-primary mr-4" %></li>
+        <li class="nav-item"><%= link_to "Log In", log_in_path, class: "nav-link" %></li>
       </ul>
     <% end %>
-    </div>
   </nav>
 </header>
