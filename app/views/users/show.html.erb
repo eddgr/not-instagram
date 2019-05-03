@@ -1,20 +1,27 @@
-<div class="jumbotron text-center">
-<h1><%= @user.name %>'s Profile</h1>
-<p><%= @user.email %></p>
+<div class="jumbotron text-center bg-light mb-0">
+  <h1><%= @user.name %>'s Profile</h1>
+  <p><%= @user.email %></p>
 
-Following
-<%= link_to @user.following.count, following_path %>
-Followers
-<%= link_to @user.followers.count, followers_path %>
-<br><br>
-<%= render 'follow' %>
+  <ul class="list-group list-group-horizontal mx-auto justify-content-center">
+    <li class="list-group-item border-0 bg-light"><strong><%= @user.posts.count %></strong> posts</li>
 
-<% if !session[:user_id].nil? && @user.id == current_user.id %>
-<%= link_to 'Edit Profile', edit_user_path, class: "btn btn-primary" %>
-<% end %>
+    <li class="list-group-item border-0 bg-light"><%= link_to followers_path, class: "text-dark" do %><strong><%= @user.followers.count %></strong> followers<% end %></li>
+
+    <li class="list-group-item border-0 bg-light"><%= link_to following_path, class: "text-dark" do %><strong><%= @user.following.count %></strong> following<% end %></li>
+  </ul>
+
+  <br>
+
+  <%= render 'follow' %>
+
+  <% if !session[:user_id].nil? && @user.id == current_user.id %>
+  <%= link_to 'Edit Profile', edit_user_path, class: "btn btn-primary" %>
+  <% end %>
 </div>
 
-<h4 class="text-center">All Posts</h4>
+<hr class="mt-0">
+
+<h5 class="text-center mb-3 font-weight-bold">Posts</h5>
 <div class="row">
   <% @user.posts.order('posts.created_at DESC').each do |post| %>
     <div class="col-4 mb-4">

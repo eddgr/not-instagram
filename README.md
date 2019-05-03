@@ -14,6 +14,7 @@
 - explore page to find new content
 - add user avatar
 - start styling
+- following post should include one photo at a time to be scrolled. different from explore
 
 # stretch goals
 - likes
