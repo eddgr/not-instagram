@@ -3,6 +3,8 @@ class UsersController < ApplicationController
   # READ
   def index
     @users = User.all
+    @posts = Post.all
+    @comments = Comment.all
   end
 
   def show

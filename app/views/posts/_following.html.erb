@@ -3,7 +3,7 @@
 <div class="row justify-content-center">
   <% current_user.following.each do |following| %>
     <% following.posts.order("created_at DESC").each do |post| %>
-      <div class="col-8 pr-0 pl-0 mb-5 shadow">
+      <div class="col-10 pr-0 pl-0 mb-5 shadow">
         <div class="bg-white p-4">
           <%= link_to post.user.email, post.user, class: "font-weight-bold text-dark" %>
         </div>
@@ -13,7 +13,7 @@
         </div>
 
         <div class="bg-white pl-4 pr-4 pt-4 text-dark">
-          <%= link_to post.user.email, post.user, class: "font-weight-bold text-dark" %> <%= post.description %><br>
+          <%= link_to post.user.email, post.user, class: "font-weight-bold text-dark" %> <%= post.title %><br>
           <% post.comments.order('created_at DESC').first(3).each do |comment| %>
             <%= link_to comment.user.email, comment.user, class: "font-weight-bold text-dark" %>
             <%= comment.body %><br>
@@ -21,7 +21,10 @@
         </div>
 
         <div class="bg-white pb-4 pl-4 pr-4 text-black-50 text-uppercase">
-          <small><%= time_ago_in_words(post.created_at) %> ago</small>
+          <small>
+            <%= time_ago_in_words(post.created_at) %> ago<br>
+            <%= link_to "Add comment", post, class: "font-weight-bold" %>
+          </small>
         </div>
 
       </div>
