@@ -18,3 +18,10 @@
 * {
   font-family: 'Nunito Sans', sans-serif;
 }
+
+// styling validation errors
+.field_with_errors {
+  border: 1px solid red;
+  width: 100%;
+  margin-bottom: 1em;
+}
