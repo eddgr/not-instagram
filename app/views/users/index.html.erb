@@ -1,13 +1,21 @@
-<h1 class="mt-4 mb-4">Stats</h1>
-<ul>
-  <li><strong>Total Users:</strong> <%= @users.count %></li>
-  <li><strong>Total Posts:</strong> <%= @posts.count %></li>
-  <li><strong>Total Comments:</strong> <%= @comments.count %></li>
-</ul>
+<h1 class="mt-4 mb-4 text-center">Not Instagram Stats</h1>
+<div class="row">
 
-<h2 class="mt-4 mb-4">All Users</h2>
-<ul class="list-group">
-  <% @users.each do |user| %>
-  <li class="list-group-item list-group-item-action"><%= link_to user.email, user_path(user), class: "text-dark font-weight-bold" %></li>
-<% end %>
-</ul>
+  <div class="col-4">
+    <h5 class="mt-4 mb-4 font-weight-bold">Top Line Stats</h5>
+    <ul>
+      <li><strong>Total Users:</strong> <%= @users.count %></li>
+      <li><strong>Total Posts:</strong> <%= @posts.count %></li>
+      <li><strong>Total Comments:</strong> <%= @comments.count %></li>
+    </ul>
+  </div>
+
+  <div class="col-8">
+    <h5 class="mt-4 mb-4 font-weight-bold">All Users</h5>
+    <ul class="list-group">
+      <% @users.each do |user| %>
+      <li class="list-group-item list-group-item-action"><%= link_to user.email, user_path(user), class: "text-dark font-weight-bold" %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
