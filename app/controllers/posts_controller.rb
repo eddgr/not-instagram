@@ -11,6 +11,10 @@ class PostsController < ApplicationController
     @photos = @posts.select do |post|
       post.photo.attached?
     end.sample(9)
+
+    # sort following feed by post date
+    @feed = Post.sort_date(current_user) if session.include? :user_id
+
   end
 
   def show

@@ -1,33 +1,33 @@
 <!-- Following Posts -->
 <h1 class="text-center mb-4 mt-4">Following</h1>
 <div class="row justify-content-center">
-  <% current_user.following.order("created_at DESC").each do |following| %>
-    <% following.posts.order("created_at DESC").each do |post| %>
-      <div class="col-10 pr-0 pl-0 mb-5 shadow">
-        <div class="bg-white p-4">
-          <%= link_to post.user.email, post.user, class: "font-weight-bold text-dark" %>
-        </div>
 
-        <div>
-          <%= link_to image_tag(post.photo, class: "img-fluid w-100"), post %>
-        </div>
-
-        <div class="bg-white pl-4 pr-4 pt-4 text-dark">
-          <%= link_to post.user.email, post.user, class: "font-weight-bold text-dark" %> <%= post.title %><br>
-          <% post.comments.order('created_at DESC').first(3).each do |comment| %>
-            <%= link_to comment.user.email, comment.user, class: "font-weight-bold text-dark" %>
-            <%= comment.body %><br>
-          <% end %>
-        </div>
-
-        <div class="bg-white pb-4 pl-4 pr-4 text-black-50 text-uppercase">
-          <small>
-            <%= time_ago_in_words(post.created_at) %> ago<br>
-            <%= link_to "Add comment", post, class: "font-weight-bold" %>
-          </small>
-        </div>
-
+  <% @feed.each do |post| %>
+    <div class="col-10 pr-0 pl-0 mb-5 shadow">
+      <div class="bg-white p-4">
+        <%= link_to post.user.email, post.user, class: "font-weight-bold text-dark" %>
       </div>
-    <% end %>
+
+      <div>
+        <%= link_to image_tag(post.photo, class: "img-fluid w-100"), post %>
+      </div>
+
+      <div class="bg-white pl-4 pr-4 pt-4 text-dark">
+        <%= link_to post.user.email, post.user, class: "font-weight-bold text-dark" %> <%= post.title %><br>
+        <% post.comments.order('created_at DESC').first(3).each do |comment| %>
+          <%= link_to comment.user.email, comment.user, class: "font-weight-bold text-dark" %>
+          <%= comment.body %><br>
+        <% end %>
+      </div>
+
+      <div class="bg-white pb-4 pl-4 pr-4 text-black-50 text-uppercase">
+        <small>
+          <%= time_ago_in_words(post.created_at) %> ago<br>
+          <%= link_to "Add comment", post, class: "font-weight-bold" %>
+        </small>
+      </div>
+
+    </div>
   <% end %>
+
 </div>
