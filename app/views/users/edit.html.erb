@@ -1,14 +1,11 @@
-<% if !session[:user_id].nil? && @user.id == current_user.id %>
-  <h1 class="mt-4 mb-4">Edit Profile</h1>
-  <%= render 'form' %>
+<div class="row justify-content-center">
+  <div class="col-sm-8 text-center">
+    <h1 class="mt-4 mb-4">Edit Profile</h1>
+    <%= render 'form' %>
 
-  <hr>
-  <h2>Delete your account</h2>
-  <p>There is no un-doing this. Proceed with caution.</p>
-  <%= button_to "Delete account", @user, method: :delete, data: { confirm: "Are you sure? You cannot undo this!" }, class: "btn btn-danger" %>
-
-<% else %>
-  You do not have access to edit.
-  <%= link_to "Go home", root_path %>
-
-<% end %>
+    <hr>
+    <h2>Delete your account</h2>
+    <p>There is no un-doing this. Proceed with caution.</p>
+    <%= button_to "Delete account", @user, method: :delete, data: { confirm: "Are you sure? You cannot undo this!" }, class: "btn btn-danger" %>
+  </div>
+</div>

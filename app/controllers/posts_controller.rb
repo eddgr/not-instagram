@@ -77,8 +77,4 @@ class PostsController < ApplicationController
     params.require(:post).permit(:title, :user_id, :photo)
   end
 
-  def require_login
-    redirect_to new_user_path if !session.include? :user_id
-  end
-
 end
