@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  helper_method :current_user
+  helper_method :current_user, :require_login
+
+  # these methods accessible by all controllers since they are child of ApplicationController
 
   private
 
@@ -9,7 +11,7 @@ class ApplicationController < ActionController::Base
   end
 
   def require_login
-    flash[:notice] = "You do not have access to do that."
+    # redirects to main page if user is not logged in
     redirect_to root_path if !session.include? :user_id
   end
 end
