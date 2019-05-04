@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :require_login, only: [:edit, :update, :destroy]
+  before_action :user_edit, only: [:edit, :update, :destroy]
 
   # READ
   def index
