@@ -14,7 +14,7 @@ class PostsController < ApplicationController
 
     # sort following feed by post date
     @feed = Post.sort_date(current_user) if session.include? :user_id
-
+    # only run class method if user is logged in otherwise will break for guests
   end
 
   def show
@@ -27,12 +27,6 @@ class PostsController < ApplicationController
     @photos = @posts.select do |post|
       post.photo.attached?
     end.sample(9)
-
-    # original idea
-    # posts of people that I'm currently not following
-    # go through each post in Post.all
-    # if post does not equal post from following or self, show
-    # @discover = Post.all.sample(9)
   end
 
   # CREATE

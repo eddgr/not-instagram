@@ -22,6 +22,6 @@ class Post < ApplicationRecord
       post.created_at
     end.reverse
     # reverse the order so the latest post appears first
-
   end
+  
 end
