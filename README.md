@@ -22,13 +22,13 @@ To get started, run `bundle install` and `rails db:migrate`, then start the rail
 - ruby 2.6.1
 - rails 5.2.3
 - bootstrap 4.3.1
- - Entire app was styled with Bootstrap
+  - Entire app was styled with Bootstrap
 - jquery-rails
- - Bootstrap dependency, no actual jQuery was used
+  - Bootstrap dependency, no actual jQuery was used
 - active_storage_validations
- - Helps with ActiveStorage validations for photo uploads
+  - Helps with ActiveStorage validations for photo uploads
 - bcrypt 3.1.7
- - Helps encrypt passwords
+  - Helps encrypt passwords
 
 ## To Do List
 
