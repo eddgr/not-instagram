@@ -16,7 +16,7 @@
 
       <ul class="navbar-nav">
         <li class="list-group-item border-0">
-          <%= link_to "New Post", new_post_path, class: "nav-link text-dark font-weight-bold" %>
+          <%= link_to "New Post", new_post_path, class: "btn btn-outline-dark" %>
         </li>
         <li class="list-group-item border-0"><%= link_to "Profile", user_path(current_user), class: "nav-link" %></li>
         <li class="list-group-item border-0"><%= link_to "Log Out", log_out_path, class: "nav-link" %></li>
@@ -27,7 +27,7 @@
       </ul>
 
       <ul class="navbar-nav list-group-horizontal">
-        <li class="list-group-item border-0"><%= link_to "Sign up", sign_up_path, class: "nav-link text-primary font-weight-bold" %></li>
+        <li class="list-group-item border-0"><%= link_to "Sign up", sign_up_path, class: "btn btn-primary" %></li>
         <li class="list-group-item border-0"><%= link_to "Log In", log_in_path, class: "nav-link" %></li>
       </ul>
     <% end %>
