@@ -27,6 +27,16 @@ class User < ApplicationRecord
 
   # HELPER METHODS
 
+  # STATS
+  
+  def self.most_posts
+    most_posts = User.all.max_by { |user| user.posts.count }
+  end
+
+  def self.most_comments
+    most_comments = User.all.max_by { |user| user.comments.count }
+  end
+
   # FOLLOWING METHODS
 
   # follow
