@@ -1,113 +1,37 @@
-# MVP TODO
+# Not Instagram
 
-<!-- - correct error messsages -->
-<!-- - feed of following -->
-<!-- - fix upload issue where file is not a photo -->
-- add fifth model
-- check out css libraries
- - white nav bar
- - light grey background
- - action links are light blue
- - everything else is a darker grey
- - links are generally bold
- <!-- - following is a white button with black borders, not the current red -->
-- explore page to find new content
-- add user avatar
-- start styling
-- following post should include one photo at a time to be scrolled. different from explore
+**Not Instagram** is an app built on Ruby on Rails and is not affiliated with Instagram.
 
-# stretch goals
-- likes
-  - users has many likes through posts
-  - posts has many likes
-  - likes belong to posts
-  - likes belong to users through posts
-- following should include self posts
-- messaging?
+**Not Instagram** allows users to create posts by uploading photos (jpg, jpeg, png, and gif) with captions. These can later be edited or deleted by the user who posted them. Users can comment on other users posts.
 
+Additionally, users can follow or be followed by other users and a new feed will be created on the home page that allows current users to see all the latest posts from users they follow.
 
-## PRIORITY
-  <!-- - Create new post from specific user -->
-  <!-- - Login to specific user -->
+Users can edit their own user information or choose to delete their account.
 
-## LAYOUT
-  <!-- - Header nav menu - Sign up, Login, Profile, Logout -->
-    <!-- - Install bootstrap and dependencies -->
-    <!-- - Sign up -->
-      <!-- - form to create new user with validation -->
-      <!-- - redirect_to show page -->
-      <!-- - set state as logged in -->
-      <!-- - Show logged in as user -->
-    <!-- - Login -->
-      <!-- - form that finds if user exist and goes to show page -->
-      <!-- - set state as logged in -->
-      <!-- - Show logged in as user -->
-    <!-- - Profile -->
-    <!-- - Logout -->
-  - Show all following user posts
-  - Show all posts
-  - Add new content page
-  - Show in user profile
+To get started, run `bundle install` and `rails db:migrate`, then start the rails server.
 
-## Users
-  <!-- - has_many Posts -->
-  <!-- - validates name is not blank -->
-  <!-- - validates email is unique and is not blank -->
-  <!-- - Show all users -->
-  <!-- - create a new user -->
-  <!-- - link to users posts -->
-  <!-- - edit username -->
-  <!-- - Successful new user sign up -->
-  <!-- - Need following/follower relationship -->
-  - use find_by_email
+## Models
 
-## Posts
-  <!-- - belongs_to User -->
-  - validates title is not blank
-  <!-- - Show all posts -->
-  <!-- - user << add new post -->
-  <!-- - link to posts' user -->
-  <!-- - edit post -->
-  <!-- - delete post -->
+- User
+- Post
+- Relationship
+- Comment
 
-## Relationship
-  - belongs_to
-  - Following
-  - Follower
-  - User
+## Notable Gems
 
-  Active
-    - following user
-  Passive
-    - followed by another user
+- ruby 2.6.1
+- rails 5.2.3
+- bootstrap 4.3.1
+ - Entire app was styled with Bootstrap
+- jquery-rails
+ - Bootstrap dependency, no actual jQuery was used
+- active_storage_validations
+ - Helps with ActiveStorage validations for photo uploads
+- bcrypt 3.1.7
+ - Helps encrypt passwords
 
-### Stretch Goals
-<!-- - Post comments -->
-- Post likes
+## To Do List
 
----
-
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Add user avatars
+- Add post likes
+- Add user to user messaging
