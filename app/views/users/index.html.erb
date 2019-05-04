@@ -11,12 +11,12 @@
 
     <h5 class="mt-4 mb-4 font-weight-bold">User With Most Posts</h5>
     <ul>
-      <li><strong>User:</strong> <%= link_to @users.most_posts.email, @users.most_posts %></li>
+      <li><strong>User:</strong> <%= link_to @users.most_posts.email, @users.most_posts, class: "text-dark font-weight-bold" %></li>
       <li><strong>Post Count:</strong> <%= @users.most_posts.posts.count %></li>
     </ul>
     <h5 class="mt-4 mb-4 font-weight-bold">User With Most Comments</h5>
     <ul>
-      <li><strong>User:</strong> <%= link_to @users.most_comments.email, @users.most_comments %></li>
+      <li><strong>User:</strong> <%= link_to @users.most_comments.email, @users.most_comments, class: "text-dark font-weight-bold" %></li>
       <li><strong>Comment Count:</strong> <%= @users.most_comments.comments.count %></li>
     </ul>
   </div>
