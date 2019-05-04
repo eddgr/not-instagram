@@ -1,27 +1,23 @@
+<%= form_for(@post) do |f| %>
+  <% if @post.errors.any? %>
+    <div class="alert alert-danger w-100">
+      <h2>There were some errors:</h2>
+      <ul>
+        <% @post.errors.full_messages.each do |message| %>
+          <li class="text-left"><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 
-  <div class="col-10">
-    <%= form_for(@post, html: {class: "row justify-content-center"}) do |f| %>
-      <% if @post.errors.any? %>
-        <div class="alert alert-danger w-100">
-          <h2>There were some errors:</h2>
-          <ul>
-            <% @post.errors.full_messages.each do |message| %>
-              <li><%= message %></li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
+  <% if @post.photo.attached? && @post.photo.valid? %>
+  <!-- if photo upload isn't valid, allow user to re-upload a new file -->
+    <%= image_tag @post.photo, class: "img-fluid w-100" %>
+    <%= f.file_field :photo, class: "mb-4 mt-4 bg-dark text-light w-100" %>
+  <% else %>
+    <%= f.file_field :photo, class: "mb-4 mt-4 bg-dark text-light w-100" %>
+  <% end %>
 
-      <% if @post.photo.attached? && @post.photo.valid? %>
-      <!-- if photo upload isn't valid, allow user to re-upload a new file -->
-        <%= image_tag @post.photo, class: "img-fluid w-100" %>
-        <%= f.file_field :photo, class: "mb-4 mt-4 bg-dark text-light w-100" %>
-      <% else %>
-        <%= f.file_field :photo, class: "mb-4 mt-4 bg-dark text-light w-100" %>
-      <% end %>
-
-      <%= f.text_field :title, placeholder: "Add title", class: "form-control" %>
-      <%= f.text_area :description, placeholder: "Add description", class: "mt-4 form-control" %><br>
-      <%= f.submit class: "btn btn-primary m-4" %>
-    <% end %>
-  </div>
+  <%= f.text_area :title, placeholder: "Write a caption", class: "form-control" %>
+  <%= f.submit class: "btn btn-primary m-4" %>
+<% end %>

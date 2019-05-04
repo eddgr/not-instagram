@@ -1,9 +1,13 @@
-<h1 class="mt-4 mb-4">Log In</h1>
+<div class="row justify-content-center">
+  <div class="col-sm-4 text-center">
 
-<%= form_tag sessions_path do %>
-  <%= label_tag :email %>
-  <%= text_field_tag :email, params[:email], class: "form-control" %><br>
-  <%= label_tag :password %>
-  <%= password_field_tag :password, params[:password], class: "form-control" %><br>
-  <%= submit_tag "Log In", class: "btn btn-primary" %>
-<% end %>
+    <h1 class="mt-4 mb-4">Log In</h1>
+
+    <%= form_tag sessions_path do %>
+      <%= text_field_tag :email, params[:email], placeholder: :email, class: "form-control" %><br>
+      <%= password_field_tag :password, params[:password], placeholder: :password, class: "form-control" %><br>
+      <%= submit_tag "Log In", class: "btn btn-primary" %>
+    <% end %>
+
+  </div>
+</div>

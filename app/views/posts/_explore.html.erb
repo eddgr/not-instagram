@@ -2,7 +2,7 @@
 <h1 class="text-center mt-4 mb-4">Explore</h1>
 <div class="row">
   <% @photos.each do |post| %>
-    <div class="col-4 mb-4"><%= link_to image_tag(post.photo, class: "rounded img-fluid", size: "400x400"), post %></div>
+    <div class="col-sm-4 mb-4"><%= link_to image_tag(post.photo, class: "img-fluid w-100"), post %></div>
   <% end %>
 </div>
 

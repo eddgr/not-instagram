@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :require_login, only: :edit
 
   # READ
   def index
@@ -73,7 +74,11 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :description, :user_id, :photo)
+    params.require(:post).permit(:title, :user_id, :photo)
+  end
+
+  def require_login
+    redirect_to new_user_path if !session.include? :user_id
   end
 
 end
