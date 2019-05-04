@@ -10,16 +10,16 @@
 
     <div class="collapse text-right navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="list-group-item border-0"><%= link_to "Explore", explore_path, class: "nav-link" %></li>
-        <li class="list-group-item border-0"><%= link_to "Stats", users_path, class: "nav-link" %></li>
+        <li class="list-group-item border-0"><%= link_to "Explore", explore_path, class: "nav-link text-dark" %></li>
+        <li class="list-group-item border-0"><%= link_to "Stats", users_path, class: "nav-link text-dark" %></li>
       </ul>
 
       <ul class="navbar-nav">
         <li class="list-group-item border-0">
           <%= link_to "New Post", new_post_path, class: "btn btn-outline-dark" %>
         </li>
-        <li class="list-group-item border-0"><%= link_to "Profile", user_path(current_user), class: "nav-link" %></li>
-        <li class="list-group-item border-0"><%= link_to "Log Out", log_out_path, class: "nav-link" %></li>
+        <li class="list-group-item border-0"><%= link_to "Profile", user_path(current_user), class: "nav-link text-dark" %></li>
+        <li class="list-group-item border-0"><%= link_to "Log Out", log_out_path, class: "nav-link text-dark" %></li>
       </ul>
     </div>
     <% else %>
@@ -28,7 +28,7 @@
 
       <ul class="navbar-nav list-group-horizontal">
         <li class="list-group-item border-0"><%= link_to "Sign up", sign_up_path, class: "btn btn-primary" %></li>
-        <li class="list-group-item border-0"><%= link_to "Log In", log_in_path, class: "nav-link" %></li>
+        <li class="list-group-item border-0"><%= link_to "Log In", log_in_path, class: "nav-link text-dark" %></li>
       </ul>
     <% end %>
   </nav>

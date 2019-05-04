@@ -14,7 +14,7 @@
     <h5 class="mt-4 mb-4 font-weight-bold">All Users</h5>
     <ul class="list-group">
       <% @users.each do |user| %>
-      <li class="list-group-item list-group-item-action"><%= link_to user.email, user_path(user), class: "text-dark font-weight-bold" %></li>
+      <li class="list-group-item list-group-item-action"><%= link_to user.email, user_path(user), class: "text-dark font-weight-bold d-flex" %></li>
       <% end %>
     </ul>
   </div>
