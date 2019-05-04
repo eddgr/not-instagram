@@ -3,22 +3,30 @@
 
   <div class="col-sm-4">
     <h5 class="mt-4 mb-4 font-weight-bold">Top Line Stats</h5>
-    <ul>
-      <li><strong>Total Users:</strong> <%= @users.count %></li>
-      <li><strong>Total Posts:</strong> <%= @posts.count %></li>
-      <li><strong>Total Comments:</strong> <%= @comments.count %></li>
+    <ul class="list-group">
+      <li class="list-group-item"><strong>Total Users:</strong> <%= @users.count %></li>
+      <li class="list-group-item"><strong>Total Posts:</strong> <%= @posts.count %></li>
+      <li class="list-group-item"><strong>Total Comments:</strong> <%= @comments.count %></li>
     </ul>
 
-    <h5 class="mt-4 mb-4 font-weight-bold">User With Most Posts</h5>
-    <ul>
-      <li><strong>User:</strong> <%= link_to @users.most_posts.email, @users.most_posts, class: "text-dark font-weight-bold" %></li>
-      <li><strong>Post Count:</strong> <%= @users.most_posts.posts.count %></li>
+    <h5 class="mt-4 mb-4 font-weight-bold">Most Followers</h5>
+    <ul class="list-group">
+      <li class="list-group-item"><strong>User:</strong> <%= link_to @users.most_followers.email, @users.most_followers, class: "text-dark font-weight-bold" %></li>
+      <li class="list-group-item"><strong>Followers:</strong> <%= @users.most_followers.followers.count %></li>
     </ul>
-    <h5 class="mt-4 mb-4 font-weight-bold">User With Most Comments</h5>
-    <ul>
-      <li><strong>User:</strong> <%= link_to @users.most_comments.email, @users.most_comments, class: "text-dark font-weight-bold" %></li>
-      <li><strong>Comment Count:</strong> <%= @users.most_comments.comments.count %></li>
+
+    <h5 class="mt-4 mb-4 font-weight-bold">Most Posts</h5>
+    <ul class="list-group">
+      <li class="list-group-item"><strong>User:</strong> <%= link_to @users.most_posts.email, @users.most_posts, class: "text-dark font-weight-bold" %></li>
+      <li class="list-group-item"><strong>Posts:</strong> <%= @users.most_posts.posts.count %></li>
     </ul>
+
+    <h5 class="mt-4 mb-4 font-weight-bold">Most Comments</h5>
+    <ul class="list-group">
+      <li class="list-group-item"><strong>User:</strong> <%= link_to @users.most_comments.email, @users.most_comments, class: "text-dark font-weight-bold" %></li>
+      <li class="list-group-item"><strong>Comments:</strong> <%= @users.most_comments.comments.count %></li>
+    </ul>
+
   </div>
 
   <div class="col-sm-8">

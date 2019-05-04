@@ -1,10 +1,10 @@
 <div class="row justify-content-center">
-  <div class="col-sm-8 text-center">
+  <div class="col-sm-4 text-center">
     <h1 class="mt-4 mb-4">Followers</h1>
 
     <ul class="list-group">
       <% @followers.each do |followers| %>
-        <li class="text-left list-group-item list-group-item-action border-0"><%= link_to followers.email, followers, class: "d-flex text-dark font-weight-bold" %></li>
+        <li class="text-left list-group-item list-group-item-action"><%= link_to followers.email, followers, class: "d-flex text-dark font-weight-bold" %></li>
       <% end %>
     </ul>
     <%= link_to "Back to profile", @user, class: "btn btn-primary mt-4" %>
