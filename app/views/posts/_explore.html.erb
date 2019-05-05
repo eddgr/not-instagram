@@ -1,11 +1,19 @@
 <!-- All Posts -->
 <h1 class="text-center mt-4 mb-4">Explore</h1>
+
 <div class="row">
   <% @photos.each do |post| %>
     <div class="col-sm-4 mb-4"><%= link_to image_tag(post.photo, class: "img-fluid w-100"), post %></div>
   <% end %>
 </div>
 
-<div class="text-center mb-4">
-  <%= link_to "Load more", explore_path, class: "btn btn-outline-primary" %>
-</div>
+<% if @photos.count >=9 %>
+  <div class="text-center mb-4">
+    <%= link_to "Load more", explore_path, class: "btn btn-outline-primary" %>
+  </div>
+<% elsif @photos.count == 0 %>
+  <div class="text-center">
+    There are no photos yet.
+  </div>
+
+<% end %>

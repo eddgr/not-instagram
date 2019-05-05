@@ -5,16 +5,22 @@ class LikesController < ApplicationController
     @post = Post.find(params[:post_id])
     @like = @post.likes.build(like_params)
     if @like.save
-      redirect_to @post
+      back
     end
   end
 
   # UNLIKE
   def destroy
-    @post = Post.find(params[:id])
-    @unlike = Like.find_by(post: @post, liker_id: current_user.id)
+    @unlike = Like.find_by(post_id: params[:post_id], liker_id: current_user.id)
+    # could be refactored further, next steps
     @unlike.destroy
-    redirect_to @post
+    back
+  end
+
+  # HELPER METHODS
+  def back
+    # redirects back to the previous page. If that doesn't exist, redirect to root path
+    redirect_back(fallback_location: root_path)
   end
 
   # PRIVATE METHODS

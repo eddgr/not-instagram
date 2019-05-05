@@ -15,7 +15,7 @@
       <div class="bg-white pl-4 pr-4 pt-4 text-dark">
         <div class="mb-2">
           <% if post.liked_by?(current_user) %>
-            unlike button
+            <%= button_to "Unlike", post_like_path(post.id, post.id), method: :delete, class: "btn-sm btn-outline-dark" %>
           <% else %>
             <%= form_for([post, post.likes.build]) do |f| %>
               <%= f.hidden_field :liker_id, value: current_user.id %>

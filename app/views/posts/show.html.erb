@@ -12,7 +12,9 @@
     </div>
 
     <div class="bg-white pt-4 pt-4 pl-4">
-      <%= render 'likes/button' %>
+      <% if !session[:user_id].nil? %>
+        <%= render 'likes/button' %>
+      <% end %>
       <%= render 'likes/stats' %>
       <%= link_to @post.user.email, @post.user, class: "font-weight-bold text-dark" %> <%= @post.title %>
     </div>
