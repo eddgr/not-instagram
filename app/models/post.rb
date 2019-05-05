@@ -2,6 +2,8 @@ class Post < ApplicationRecord
   belongs_to :user
   has_many :comments
   has_many :users, through: :comments
+  has_many :likes
+  has_many :likers, foreign_key: "liker_id", through: :likes
   validates :user_id, presence: true
   has_one_attached :photo
   validates :photo, attached: true, content_type: ['image/png', 'image/jpg', 'image/jpeg', 'image/gif']
@@ -23,5 +25,5 @@ class Post < ApplicationRecord
     end.reverse
     # reverse the order so the latest post appears first
   end
-  
+
 end

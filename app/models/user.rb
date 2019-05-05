@@ -16,6 +16,9 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   # destroys posts associated with user
 
+  has_many :likes
+  has_many :likers, foreign_key: "liker_id", class_name: "User", through: :likes
+
   # active_relationships = following users
   has_many :active_relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
   has_many :following, through: :active_relationships, source: :followed

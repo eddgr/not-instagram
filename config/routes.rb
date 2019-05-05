@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :posts do
     resources :comments
     # comments belongs_to posts
+    resources :likes
   end
 
   resources :relationships, only: [:create, :destroy]

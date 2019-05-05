@@ -23,8 +23,8 @@
 <% else %>
   <div class="row">
     <% @user.posts.order('posts.created_at DESC').each do |post| %>
-      <div class="col-4 mb-4">
-        <%= link_to image_tag(post.photo, class: "img-fluid", size: "400x400"), post_path(post) %>
+      <div class="col-sm-4 mb-4">
+        <%= link_to image_tag(post.photo, class: "img-fluid"), post_path(post) %>
       </div>
     <% end %>
   </div>
