@@ -13,6 +13,17 @@
       </div>
 
       <div class="bg-white pl-4 pr-4 pt-4 text-dark">
+        <% if post.likes.count != 0 %>
+          <div class="font-weight-bold">
+            <%= post.likes.count %>
+            <% if post.likes.count == 1 %>
+            like
+            <% else %>
+            likes
+            <% end %>
+          </div>
+        <% end %>
+
         <%= link_to post.user.email, post.user, class: "font-weight-bold text-dark" %> <%= post.title %><br>
         <% post.comments.order('created_at DESC').first(3).each do |comment| %>
           <%= link_to comment.user.email, comment.user, class: "font-weight-bold text-dark" %>

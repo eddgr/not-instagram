@@ -12,11 +12,11 @@
     </div>
 
     <div class="bg-white pt-4 pt-4 pl-4">
+      <%= render 'likes/button' %>
+      <%= render 'likes/stats' %>
       <%= link_to @post.user.email, @post.user, class: "font-weight-bold text-dark" %> <%= @post.title %>
     </div>
 
-    <%= @post.likes.count %>
-    <%= render 'likes/button' %>
 
     <%= render @post.comments.order('created_at DESC') %>
 

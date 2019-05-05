@@ -1,0 +1,10 @@
+<% if @post.likes.count != 0 %>
+  <div class="font-weight-bold">
+    <%= @post.likes.count %>
+    <% if @post.likes.count == 1 %>
+    like
+    <% else %>
+    likes
+    <% end %>
+  </div>
+<% end %>
