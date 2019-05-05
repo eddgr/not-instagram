@@ -6,10 +6,11 @@ Rails.application.routes.draw do
   resources :sessions
 
   get 'explore', to: "posts#explore", as: "explore"
+  get 'posts/:id/unlike', to: "likes#destroy", as: "unlike"
   resources :posts do
-    resources :comments
+    resources :comments, only: :create
     # comments belongs_to posts
-    resources :likes
+    resources :likes, only: [:create, :destroy]
   end
 
   resources :relationships, only: [:create, :destroy]

@@ -11,6 +11,11 @@ class Post < ApplicationRecord
 
   # HELPER METHODS
 
+  # post likes
+  def liked_by?(user_object)
+    likers.include?(user_object)
+  end
+
   # sort posts by created date for following feed
   def self.sort_date(user_object)
     # put all user's following posts in one array

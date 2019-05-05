@@ -15,6 +15,9 @@
       <%= link_to @post.user.email, @post.user, class: "font-weight-bold text-dark" %> <%= @post.title %>
     </div>
 
+    <%= @post.likes.count %>
+    <%= render 'likes/button' %>
+
     <%= render @post.comments.order('created_at DESC') %>
 
     <div class="bg-white pb-4 pl-4 pr-4 text-uppercase text-black-50">

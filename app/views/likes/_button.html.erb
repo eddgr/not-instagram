@@ -1,0 +1,8 @@
+<% if @post.liked_by?(current_user) %>
+  <%= button_to "Unlike", post_like_path(@post), method: :delete %>
+<% else %>
+  <%= form_for([@post, @post.likes.build]) do |f| %>
+    <%= f.hidden_field :liker_id, value: current_user.id %>
+    <%= f.submit "Like", class:"btn btn-outline-primary" %>
+  <% end %>
+<% end %>
