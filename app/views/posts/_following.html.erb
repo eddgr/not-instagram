@@ -25,9 +25,17 @@
         <% end %>
 
         <%= link_to post.user.email, post.user, class: "font-weight-bold text-dark" %> <%= post.title %><br>
-        <% post.comments.order('created_at DESC').first(3).each do |comment| %>
-          <%= link_to comment.user.email, comment.user, class: "font-weight-bold text-dark" %>
-          <%= comment.body %><br>
+        <% if post.comments.count >= 3 %>
+          <%= link_to "View all #{post.comments.count} comments", post, class: "font-weight-bold text-black-50" %><br>
+          <% post.comments.order('created_at').last(2).each do |comment| %>
+            <%= link_to comment.user.email, comment.user, class: "font-weight-bold text-dark" %>
+            <%= comment.body %><br>
+          <% end %>
+        <% else %>
+          <% post.comments.order('created_at').last(3).each do |comment| %>
+            <%= link_to comment.user.email, comment.user, class: "font-weight-bold text-dark" %>
+            <%= comment.body %><br>
+          <% end %>
         <% end %>
       </div>
 
