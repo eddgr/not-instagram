@@ -2,9 +2,9 @@
 
 **Not Instagram** is an app built on Ruby on Rails and is not affiliated with Instagram.
 
-**Not Instagram** allows users to create posts by uploading photos (jpg, jpeg, png, and gif) with captions. These can later be edited or deleted by the user who posted them. Users can comment or like other user's posts.
+**Not Instagram** allows users to create posts by uploading photos (jpg, jpeg, png, and gif) with captions. These can later be edited or deleted by the user who posted them. Users can comment and like other users' posts.
 
-Additionally, users can follow or be followed by other users and a new feed will be created on the home page that allows current users to see all the latest posts from users they follow.
+Additionally, users can follow or be followed by other users. A new feed will be created on the home page that allows current users to see all the latest posts from users they follow.
 
 Users can edit their own user information or choose to delete their account.
 
