@@ -11,6 +11,11 @@ class Post < ApplicationRecord
 
   # HELPER METHODS
 
+  # most liked post
+  def self.most_liked
+    Post.all.max_by {|post| post.likers.count}
+  end
+
   # post likes
   def liked_by?(user_object)
     likers.include?(user_object)
