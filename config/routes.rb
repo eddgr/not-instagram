@@ -13,6 +13,11 @@ Rails.application.routes.draw do
     resources :likes, only: [:create, :destroy]
   end
 
+  get 'inbox', to: "message_threads#index", as: "inbox"
+  resources :message_threads do
+    resources :messages, only: :create
+  end
+
   resources :relationships, only: [:create, :destroy]
   # used for Follow and Unfollow
 

@@ -1,0 +1,19 @@
+<h1 class="text-center "><%= link_to @receiver.email, @receiver, class: "text-dark font-weight-bold" %></h1><br>
+
+
+
+    <%= link_to @thread.user.email, @thread.user, class: "text-dark font-weight-bold" %>
+    <%= @thread.body %><br>
+
+    <% @thread.messages.each do |message| %>
+      <%= link_to message.user.email, message.user %>
+      <%= message.body %>
+      <%= time_ago_in_words(message.created_at) %>
+      <br>
+    <% end %>
+
+    <%= form_for([@thread, @thread.messages.build]) do |f| %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+      <%= f.text_area :body, placeholder: "Send a message", class:"form-control" %><br>
+      <%= f.submit class: "btn btn-outline-primary" %>
+    <% end %>

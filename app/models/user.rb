@@ -17,7 +17,6 @@ class User < ApplicationRecord
   # destroys posts associated with user
 
   has_many :likes
-  # has_many :likers, foreign_key: "liker_id", class_name: "User", through: :likes
 
   # active_relationships = following users
   has_many :active_relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
@@ -27,6 +26,10 @@ class User < ApplicationRecord
   # passive_relationships = being followed by other users
   has_many :passive_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
   has_many :followers, through: :passive_relationships, source: :follower
+
+  has_many :messages, dependent: :destroy
+  has_many :message_threads, through: :message_threads, dependent: :destroy
+  has_many :message_threads, dependent: :destroy
 
   # HELPER METHODS
 

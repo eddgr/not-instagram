@@ -1,0 +1,8 @@
+<h1 class="text-center mt-4 mb-4">Inbox</h1>
+
+<% @inbox.all.each do |message| %>
+  <%= link_to message do %>
+    <%= User.find(message.receiver_id).email %>
+    <%= message.messages.last.body %>
+  <% end %>
+<% end %>
