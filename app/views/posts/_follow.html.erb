@@ -3,7 +3,7 @@
 
   <% if !session[:user_id].nil? %>
   <!-- if user is signed in -->
-    <div class="float-right">
+    <div class="float-right mt-n1">
 
     <% if !current_user.following?(@post.user) %>
     <!-- if current user is not followering user, show Follow button -->
