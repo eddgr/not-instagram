@@ -1,15 +1,26 @@
 class MessageThreadsController < ApplicationController
-  before_action :message_participant?, except: :index
+  before_action :message_participant?, except: [:index, :new, :create]
 
   # READ
   def index
     @inbox = current_user.message_threads
+    @messages = MessageThread.where(receiver_id: current_user.id)
   end
 
   def show
     set_receiver
-    # @thread = MessageThread.find(params[:id])
-    # @receiver = User.find(@thread.receiver_id)
+  end
+
+  # CREATE
+  def new
+    @thread = MessageThread.new
+  end
+
+  def create
+    @thread = MessageThread.new(thread_params)
+    if @thread.save
+      redirect_to @thread
+    end
   end
 
   # PRIVATE METHODS
@@ -18,6 +29,10 @@ class MessageThreadsController < ApplicationController
   def set_receiver
     @thread = MessageThread.find(params[:id])
     @receiver = User.find(@thread.receiver_id)
+  end
+
+  def thread_params
+    params.require(:message_thread).permit(:user_id, :receiver_id, :body)
   end
 
   def message_participant?

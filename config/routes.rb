@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     resources :likes, only: [:create, :destroy]
   end
 
+  get 'users/:id/message', to: "message_threads#new"
   get 'inbox', to: "message_threads#index", as: "inbox"
   resources :message_threads do
     resources :messages, only: :create

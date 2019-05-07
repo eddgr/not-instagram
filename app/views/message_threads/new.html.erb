@@ -1,0 +1,6 @@
+<%= form_for @thread do |f| %>
+<%= f.hidden_field :user_id, value: current_user.id %>
+<%= f.hidden_field :receiver_id, value: params[:id] %>
+<%= f.text_area :body, class: "form-control" %>
+<%= f.submit "Send", class: "btn btn-primary" %>
+<% end %>

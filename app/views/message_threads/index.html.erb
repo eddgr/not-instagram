@@ -1,8 +1,21 @@
 <h1 class="text-center mt-4 mb-4">Inbox</h1>
 
+<h2>messages received</h2>
+<% @messages.each do |message| %>
+  <%= link_to message do %>
+    <%= message.user.email %>
+    <%= message.body %>
+  <% end %>
+<% end %>
+
+<h2>thread started</h2>
 <% @inbox.all.each do |message| %>
   <%= link_to message do %>
     <%= User.find(message.receiver_id).email %>
-    <%= message.messages.last.body %>
+    <% if message.messages.any? %>
+      <%= message.messages.last.body %>
+    <% else %>
+      <%= message.body %>
+    <% end %>
   <% end %>
 <% end %>

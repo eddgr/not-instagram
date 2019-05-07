@@ -1,19 +1,27 @@
-<h1 class="text-center "><%= link_to @receiver.email, @receiver, class: "text-dark font-weight-bold" %></h1><br>
+<h1 class="text-center mt-4"><%= link_to @receiver.email, @receiver, class: "text-dark font-weight-bold" %></h1><br>
 
+<div class="row justify-content-center">
+  <div class="col-sm-8">
 
 
     <%= link_to @thread.user.email, @thread.user, class: "text-dark font-weight-bold" %>
     <%= @thread.body %><br>
 
     <% @thread.messages.each do |message| %>
-      <%= link_to message.user.email, message.user %>
+      <%= link_to message.user.email, message.user, class: "text-dark font-weight-bold" %>
       <%= message.body %>
-      <%= time_ago_in_words(message.created_at) %>
+      <em><small class="text-black-50"><%= time_ago_in_words(message.created_at) %></small></em>
       <br>
     <% end %>
 
-    <%= form_for([@thread, @thread.messages.build]) do |f| %>
-      <%= f.hidden_field :user_id, value: current_user.id %>
-      <%= f.text_area :body, placeholder: "Send a message", class:"form-control" %><br>
-      <%= f.submit class: "btn btn-outline-primary" %>
-    <% end %>
+    <div class="mt-4">
+      <%= form_for([@thread, @thread.messages.build]) do |f| %>
+        <%= f.hidden_field :user_id, value: current_user.id %>
+        <%= f.text_area :body, placeholder: "Send a message", class:"form-control" %><br>
+        <%= f.submit "Send", class: "btn btn-outline-primary" %>
+      <% end %>
+    </div>
+
+
+  </div>
+  </div>

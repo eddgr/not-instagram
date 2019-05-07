@@ -19,6 +19,7 @@
         <li class="list-group-item border-0">
           <%= link_to "New Post", new_post_path, class: "btn btn-primary" %>
         </li>
+        <li class="list-group-item border-0"><%= link_to "Inbox", inbox_path, class: "nav-link text-dark" %></li>
         <li class="list-group-item border-0"><%= link_to "Profile", user_path(current_user), class: "nav-link text-dark" %></li>
         <li class="list-group-item border-0"><%= link_to "Log Out", log_out_path, class: "nav-link text-dark" %></li>
       </ul>
