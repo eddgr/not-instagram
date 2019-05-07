@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :require_login, only: [:index, :edit, :update, :destroy]
+  skip_before_action :require_login, only: [:new, :create, :show, :following, :followers]
   before_action :user_edit, only: [:edit, :update, :destroy]
 
   # READ
@@ -69,5 +69,11 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  end
+
+  # current user can only edit own profile
+  def user_edit
+    user = User.find(params[:id])
+    redirect_to user if user != current_user
   end
 end

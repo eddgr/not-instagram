@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :require_login, only: [:edit, :update, :destroy, :search]
+  skip_before_action :require_login, only: [:index, :show, :explore]
   before_action :post_edit, only: [:edit, :update, :destroy]
 
   # READ
@@ -83,4 +83,9 @@ class PostsController < ApplicationController
     params.require(:post).permit(:title, :user_id, :photo, :search)
   end
 
+  # current user can only edit own post
+  def post_edit
+    post = Post.find(params[:id])
+    redirect_to post if post.user != current_user
+  end
 end

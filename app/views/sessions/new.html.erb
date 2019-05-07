@@ -4,8 +4,8 @@
     <h1 class="mt-4 mb-4">Log In</h1>
 
     <%= form_tag sessions_path do %>
-      <%= text_field_tag :email, params[:email], placeholder: :email, class: "form-control" %><br>
-      <%= password_field_tag :password, params[:password], placeholder: :password, class: "form-control" %><br>
+      <%= text_field_tag :email, params[:email], placeholder: "Email", class: "form-control" %><br>
+      <%= password_field_tag :password, params[:password], placeholder: "Password", class: "form-control" %><br>
       <%= submit_tag "Log In", class: "btn btn-primary" %>
     <% end %>
 
