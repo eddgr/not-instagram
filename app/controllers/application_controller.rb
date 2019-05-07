@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   before_action :require_login
   # every page require's logging in unless specified
   helper_method :current_user
-  # these methods accessible by all controllers since they are child of ApplicationController, through helper_method
+  # current_user can now be accessed by child controllers
 
   private
 
