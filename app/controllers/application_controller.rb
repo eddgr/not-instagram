@@ -1,8 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  helper_method :current_user, :require_login, :post_id, :user_edit
-
-  # these methods accessible by all controllers since they are child of ApplicationController
+  helper_method :current_user, :require_login, :post_edit, :user_edit
+  # these methods accessible by all controllers since they are child of ApplicationController, through helper_method
 
   private
 
