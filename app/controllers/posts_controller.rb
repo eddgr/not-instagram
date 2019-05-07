@@ -31,7 +31,7 @@ class PostsController < ApplicationController
 
   def search
     @posts = Post.search(params[:search])
-    if params[:search].nil?
+    if params[:search].nil? || params[:search] == ""
       redirect_to root_path
     end
   end

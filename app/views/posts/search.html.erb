@@ -1,8 +1,13 @@
-  <h1>Results for <%= params[:search] %></h1>
-  <% if @posts.nil? %>
-  No search results
-  <% else %>
+<h1 class="text-center mt-4 mb-4">Results for <%= params[:search] %></h1>
+
+<% if @posts.nil? %>
+  <div class="text-center">
+  No results found.
+  </div>
+<% else %>
+  <div class="row">
   <% @posts.each do |post| %>
-    <%= image_tag post.photo %>
+    <div class="col-sm-4 mb-4"><%= link_to image_tag(post.photo, class: "w-100 img-fluid"), post %></div>
   <% end %>
+  </div>
 <% end %>
