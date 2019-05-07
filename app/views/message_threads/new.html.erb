@@ -1,6 +1,16 @@
-<%= form_for @thread do |f| %>
-<%= f.hidden_field :user_id, value: current_user.id %>
-<%= f.hidden_field :receiver_id, value: params[:id] %>
-<%= f.text_area :body, class: "form-control" %>
-<%= f.submit "Send", class: "btn btn-primary" %>
-<% end %>
+<div class="text-center mt-4 mb-4">
+  <h1>Chat</h1>
+  <%= link_to User.find(params[:id]).email, User.find(params[:id]), class: "text-dark font-weight-bold" %></h1>
+  <%= link_to current_user.email, current_user, class: "text-dark font-weight-bold" %>
+</div>
+
+<div class="row justify-content-center">
+  <div class="col-sm-8">
+    <%= form_for @thread do |f| %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+      <%= f.hidden_field :receiver_id, value: params[:id] %>
+      <%= f.text_area :body, class: "form-control" %>
+      <%= f.submit "Send", class: "btn btn-primary mt-4" %>
+    <% end %>
+  </div>
+</div>

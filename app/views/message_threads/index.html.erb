@@ -9,13 +9,17 @@
 <% end %>
 
 <h2>thread started</h2>
-<% @inbox.all.each do |message| %>
+<% @inbox.all.order('created_at DESC').each do |message| %>
   <%= link_to message do %>
-    <%= User.find(message.receiver_id).email %>
+    <span class="text-dark font-weight-bold">
+      <%= User.find(message.receiver_id).email %>
+    </span>
     <% if message.messages.any? %>
       <%= message.messages.last.body %>
     <% else %>
       <%= message.body %>
     <% end %>
+    <em><small><%= time_ago_in_words(message.created_at) %></small></em>
+    <br>
   <% end %>
 <% end %>
