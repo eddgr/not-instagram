@@ -35,7 +35,7 @@
       <%= link_to image_tag(@posts.most_liked.photo, class: "w-100 img-fluid"), @posts.most_liked %>
       <div class="bg-white p-4">
         <div class="font-weight-bold">
-          <%= @posts.most_liked.likers.count %>
+          <%= @posts.most_liked.likes.count %>
           <% if @posts.most_liked.likes.count == 1 %>
           like
           <% else %>
