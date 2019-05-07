@@ -13,11 +13,17 @@ class MessageThreadsController < ApplicationController
 
   # CREATE
   def new
-    exist = MessageThread.find_by(user: current_user, receiver_id: User.find(params[:id]))
+    exist_send = MessageThread.find_by(user: current_user, receiver_id: User.find(params[:id]))
+    exist_receive = MessageThread.find_by(receiver_id: current_user.id, user: User.find(params[:id]))
     # check to see if a message thread already exists
-    if !!exist
-      redirect_to exist
+    if !!exist_send
+      # first check if current user has sent a message to user
+      redirect_to exist_send
+    elsif !!exist_receive
+      # then check if user has sent a message to current user
+      redirect_to exist_receive
     else
+      # if neither exist, create a new thread
       @thread = MessageThread.new
     end
   end
