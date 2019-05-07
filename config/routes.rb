@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'sign_up', to: "users#new", as: "sign_up"
   resources :sessions
 
+  get 'search', to: "posts#search", as: "search"
   get 'explore', to: "posts#explore", as: "explore"
   resources :posts do
     resources :comments, only: :create

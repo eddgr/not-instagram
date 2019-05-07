@@ -11,6 +11,25 @@ class Post < ApplicationRecord
 
   # HELPER METHODS
 
+  # search
+  def self.search(search)
+    if search
+      post = Post.where("title LIKE ?", "%#{search}%")
+      # search is based on title
+      if post.any?
+        self.where(id: post).order('posts.created_at DESC')
+        # if posts exist, show posts by latest date
+      else
+        nil
+        # if no post within params exist, return nil
+        # creating logic for empty search results
+      end
+    else
+      Post.all.order('posts.created_at DESC')
+      # show all if there are no params
+    end
+  end
+
   # most liked post
   def self.most_liked
     Post.all.max_by {|post| post.likers.count}

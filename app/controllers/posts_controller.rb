@@ -29,6 +29,13 @@ class PostsController < ApplicationController
     end.sample(9)
   end
 
+  def search
+    @posts = Post.search(params[:search])
+    if params[:search].nil?
+      redirect_to root_path
+    end
+  end
+
   # CREATE
   def new
     @post = current_user.posts.build
@@ -73,7 +80,7 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :user_id, :photo)
+    params.require(:post).permit(:title, :user_id, :photo, :search)
   end
 
 end

@@ -2,7 +2,7 @@
   <%= render 'explore' %>
 <% else %>
   <% if current_user.following.empty? %>
-    <div class="text-center">      
+    <div class="text-center">
       <h1 class="mt-4 mb-4">Following</h1>
       <p>
         Your feed is empty. <%= link_to "Explore to find more content.", explore_path %>

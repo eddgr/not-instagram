@@ -1,0 +1,8 @@
+  <h1>Results for <%= params[:search] %></h1>
+  <% if @posts.nil? %>
+  No search results
+  <% else %>
+  <% @posts.each do |post| %>
+    <%= image_tag post.photo %>
+  <% end %>
+<% end %>
