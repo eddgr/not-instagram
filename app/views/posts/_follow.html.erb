@@ -21,7 +21,9 @@
 
   <% else %>
   <!-- show send user to sign up page if they're not signed in -->
-    <%= link_to "Follow", new_user_path, class: "btn btn-primary" %>
+    <div class="float-right">
+      <%= link_to "Follow", new_user_path, class: "btn-sm btn-primary" %>
+    </div>
 
   <% end %> <!-- end if -->
 
