@@ -6,9 +6,11 @@
 
 Users can comment, like, and search for other users' posts.
 
-Additionally, users can follow or be followed by other users. A new feed will be created on the home page that allows current users to see all the latest posts from users they follow.
+Users can also follow or be followed by other users. A new feed will be created on the home page that allows current users to see all the latest posts from users they follow.
 
-Users can edit their own user information or choose to delete their account.
+Additionally, users can message other users to create a thread between both users.
+
+Lastly, users can edit their own user information or choose to delete their account.
 
 To get started, run `bundle install` and `rails db:migrate`, then start the rails server.
 
@@ -36,4 +38,3 @@ To get started, run `bundle install` and `rails db:migrate`, then start the rail
 ## To Do List
 
 - Add user avatars
-- Add user to user messaging
