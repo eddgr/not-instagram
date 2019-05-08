@@ -1,6 +1,7 @@
 <div class="text-center mt-4 mb-4">
   <h1>Chat</h1>
-  <%= link_to User.find(params[:id]).email, User.find(params[:id]), class: "text-dark font-weight-bold" %></h1>
+  <%= link_to User.find(params[:id]).email, User.find(params[:id]), class: "text-dark font-weight-bold" %>
+  +
   <%= link_to current_user.email, current_user, class: "text-dark font-weight-bold" %>
 </div>
 
