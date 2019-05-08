@@ -19,6 +19,8 @@ To get started, run `bundle install` and `rails db:migrate`, then start the rail
 - Relationship
 - Comment
 - Like
+- Message Thread
+- Message
 
 ## Notable Gems
 
