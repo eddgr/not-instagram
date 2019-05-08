@@ -4,13 +4,11 @@
 
 **Not Instagram** allows users to create posts by uploading photos (jpg, jpeg, png, and gif) with captions. These can later be edited or deleted by the user who posted them.
 
-Users can comment, like, and search for other users' posts.
-
-Users can also follow or be followed by other users. A new feed will be created on the home page that allows current users to see all the latest posts from users they follow.
-
-Additionally, users can message other users to create a thread between both users.
-
-Lastly, users can edit their own user information or choose to delete their account.
+Additionally, users can:
+- Comment, like, and search for other users' posts.
+- Follow or be followed by other users. A new feed will be created on the home page that allows current users to see all the latest posts from users they follow.
+- Message other users to create a thread between both users.
+- Edit their own user information or choose to delete their account.
 
 To get started, run `bundle install` and `rails db:migrate`, then start the rails server.
 
