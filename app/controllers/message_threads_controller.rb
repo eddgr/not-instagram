@@ -3,8 +3,9 @@ class MessageThreadsController < ApplicationController
 
   # READ
   def index
-    @inbox = current_user.message_threads
-    @messages = MessageThread.where(receiver_id: current_user.id)
+    @inbox = MessageThread.where(user: current_user).joins(:messages).order('messages.created_at DESC')
+    # joining child messages so that inbox can be sorted by latest message in thread
+    @messages = MessageThread.where(receiver_id: current_user.id).joins(:messages).order('messages.created_at DESC')
   end
 
   def show
