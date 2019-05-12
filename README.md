@@ -37,4 +37,5 @@ To get started, run `bundle install` and `rails db:migrate`, then start the rail
 
 ## To Do List
 
+- Consolidate message inbox to central one
 - Add user avatars
