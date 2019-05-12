@@ -9,7 +9,9 @@
   <div class="col-sm-8">
 
     <%= link_to @thread.user.email, @thread.user, class: "text-dark font-weight-bold" %>
-    <%= @thread.body %><br>
+    <%= @thread.body %>
+    <em><small class="text-black-50"><%= time_ago_in_words(@thread.created_at) %></small></em>
+    <br>
 
     <% @thread.messages.each do |message| %>
       <%= link_to message.user.email, message.user, class: "text-dark font-weight-bold" %>
