@@ -1,5 +1,4 @@
 <h1 class="text-center mt-4 mb-4">Inbox</h1>
-
 <div class="row justify-content-center">
   <div class="col-sm-8">
     <div class="row">
@@ -16,10 +15,11 @@
                   </span>
                   <% if message.messages.any? %>
                     <%= message.messages.last.body %>
+                    <em><small><%= time_ago_in_words(message.messages.last.created_at) %></small></em>
                   <% else %>
                     <%= message.body %>
+                    <em><small><%= time_ago_in_words(message.created_at) %></small></em>
                   <% end %>
-                  <em><small><%= time_ago_in_words(message.created_at) %></small></em>
                 <% end %>
               </li>
             <% end %>
@@ -37,10 +37,11 @@
               </span>
               <% if message.messages.any? %>
                 <%= message.messages.last.body %>
+                <em><small><%= time_ago_in_words(message.messages.last.created_at) %></small></em>
               <% else %>
                 <%= message.body %>
+                <em><small><%= time_ago_in_words(message.created_at) %></small></em>
               <% end %>
-              <em><small><%= time_ago_in_words(message.created_at) %></small></em>
             <% end %>
           </li>
           <% end %>
