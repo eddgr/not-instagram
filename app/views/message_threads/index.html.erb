@@ -14,7 +14,11 @@
                   <span class="font-weight-bold">
                     <%= message.user.email %>
                   </span>
-                  <%= message.body %>
+                  <% if message.messages.any? %>
+                    <%= message.messages.last.body %>
+                  <% else %>
+                    <%= message.body %>
+                  <% end %>
                   <em><small><%= time_ago_in_words(message.created_at) %></small></em>
                 <% end %>
               </li>
