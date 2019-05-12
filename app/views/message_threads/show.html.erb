@@ -24,7 +24,7 @@
       <%= form_for([@thread, @thread.messages.build]) do |f| %>
         <%= f.hidden_field :user_id, value: current_user.id %>
         <%= f.text_area :body, placeholder: "Send a message", class:"form-control" %><br>
-        <%= f.submit "Send", class: "btn btn-outline-primary" %>
+        <%= f.submit "Send", class: "btn btn-primary" %>
       <% end %>
     </div>
 
