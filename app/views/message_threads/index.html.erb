@@ -6,7 +6,7 @@
       <div class="col-sm">
         <h4>Received Messages</h4>
           <ul class="list-group">
-            <% @messages.order('created_at DESC').each do |message| %>
+            <% @messages.order('updated_at DESC').each do |message| %>
 
               <li class="list-group-item list-group-item-action">
                 <%= link_to message, class: "text-dark" do %>
@@ -29,7 +29,7 @@
       <div class="col-sm">
         <h4>Messages Sent</h4>
         <ul class="list-group">
-          <% @inbox.all.order('created_at DESC').each do |message| %>
+          <% @inbox.all.order('updated_at DESC').each do |message| %>
           <li class="list-group-item list-group-item-action">
             <%= link_to message, class: "text-dark" do %>
               <span class="font-weight-bold">
