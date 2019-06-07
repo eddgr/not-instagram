@@ -12,7 +12,7 @@ Additionally, users can:
 
 To get started, run `bundle install` and `rails db:migrate`, then start the rails server.
 
-Live Demo: https://mysterious-thicket-13534.herokuapp.com/
+Live Demo: https://not-instagram-app.herokuapp.com/
 
 ## Models
 
