@@ -1,8 +1,8 @@
 <% if !session[:user_id].nil? %>
   <% if @post.user.id == current_user.id %>
     <span class="float-right">
-      <%= link_to "Edit Post", edit_post_path, class: "pr-2" %>
-      <%= link_to "Delete Post", @post, method: :delete, class: "text-danger font-weight-bold", data: { confirm: "Are you sure?" } %>
+      <%= link_to "Edit", edit_post_path, class: "pr-2" %>
+      <%= link_to "Delete", @post, method: :delete, class: "text-danger font-weight-bold", data: { confirm: "Are you sure?" } %>
     </span>
   <% end %>
 <% end %>

@@ -14,6 +14,15 @@ To get started, run `bundle install` and `rails db:migrate`, then start the rail
 
 Live Demo: https://not-instagram-app.herokuapp.com/
 
+### Login & Like
+![](login-like.gif)
+
+### Upload Post
+![](add-post.gif)
+
+### Update Profile
+![](profile.gif)
+
 ## Models
 
 - User
